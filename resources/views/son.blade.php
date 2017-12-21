@@ -1,0 +1,11 @@
+@extends('main')
+@section('title','我是儿子')
+@section('content')
+<div>你好，生活</div>
+    @component('alert')
+        @slot('title')
+            不行！
+        @endslot
+        哎呦我操，出错了！
+    @endcomponent
+@endsection

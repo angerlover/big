@@ -62,7 +62,24 @@ return [
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
-
+        'admin' => [ 'driver' => 'local',
+                    'root' => public_path('upload'),
+                    'visibility' => 'public',
+                ],
+        'qiniu' => [
+                'driver'  => 'qiniu',
+                'domains' => [
+                    'default'   => 'o8ifl04fm.bkt.clouddn.com', //你的七牛域名
+                    'https'     => 'dn-yourdomain.qbox.me',         //你的HTTPS域名
+                    'custom'    => 'o8ifl04fm.bkt.clouddn.com',                //Useless 没啥用，请直接使用上面的 default 项
+                ],
+                'access_key'=> 'BT-KwbDeyTr2WI2t1RrvYtxXJDYbEQt44UNQPdfT',  //AccessKey
+                'secret_key'=> '2srPRbS1UkirMdAJq58hJWLZmRit_5iIqllTJ509',  //SecretKey
+                'bucket'    => 'kissnicky',  //Bucket名字
+                'notify_url'=> '',  //持久化处理回调地址
+                'access'    => 'public'  //空间访问控制 public 或 private
+            ],
     ],
+
 
 ];
